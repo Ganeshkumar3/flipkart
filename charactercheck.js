@@ -13,3 +13,5 @@ for(let i=0;i<str1.length;i++){
 for(let result in count)
     if(count[result]>1)
 console.log(result+"="+count[result])
+
+//added
