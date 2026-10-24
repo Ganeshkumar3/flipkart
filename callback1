@@ -1,0 +1,44 @@
+let amount = 10000;
+
+function getAmount(callback) {
+    console.log("Current Amount:", amount);
+    callback();
+}
+
+function withdraw(callback) {
+    let withdrawAmount = 2000;
+
+    amount = amount - withdrawAmount;
+
+    console.log("Withdraw:", withdrawAmount);
+    console.log("Balance:", amount);
+
+    callback();
+}
+
+function deposit(callback) {
+    let depositAmount = 5000;
+
+    amount = amount + depositAmount;
+
+    console.log("Deposit:", depositAmount);
+    console.log("Balance:", amount);
+
+    callback();
+}
+
+// Callback Hell
+
+getAmount(() => {
+
+    withdraw(() => {
+
+        deposit(() => {
+
+            console.log("Final Amount:", amount);
+
+        });
+
+    });
+
+});
